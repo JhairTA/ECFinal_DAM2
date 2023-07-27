@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/evc2_graph"
+    app:startDestination="@id/fragmentList">
+
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="com.proyecto.ec3_dam2.ui.fragments.FragmentList"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/fragmentFavorite"
+        android:name="com.proyecto.ec3_dam2.ui.fragments.FragmentFavorite"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/fragmentInfo"
+        android:name="com.proyecto.ec3_dam2.ui.fragments.FragmentInfo"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+</navigation>
