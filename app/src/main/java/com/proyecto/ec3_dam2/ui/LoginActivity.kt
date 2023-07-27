@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         if (correo.isNotEmpty() && contra.isNotEmpty()){
             if (Patterns.EMAIL_ADDRESS.matcher(correo).matches()){
                 if (correo.equals("ejemplo@idat.edu.pe") && contra.equals("123456")){
-                    Toast.makeText(this, "Bienvenido a 🎵MusicMix🎵", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Bienvenido al app", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MenuActivity::class.java)
                     startActivity(intent)
                     finish()
