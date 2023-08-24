@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.proyecto.ec3_dam2.R
 import com.proyecto.ec3_dam2.databinding.FragmentListBinding
 import com.proyecto.ec3_dam2.model.getData
@@ -32,7 +33,10 @@ class FragmentList : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = RVPersListAdapter(listOf())
+        val adapter = RVPersListAdapter(listOf()){personaje ->
+            val destination = FragmentListDirections.actionFragmentListToFragmentDetail(personaje)
+            findNavController().navigate(destination)
+        }
         binding.rvPersList.adapter = adapter
         viewModel.personajes.observe(requireActivity()){
             adapter.pers = it

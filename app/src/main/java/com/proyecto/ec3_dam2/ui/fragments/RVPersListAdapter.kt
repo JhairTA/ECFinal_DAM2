@@ -10,10 +10,10 @@ import com.proyecto.ec3_dam2.databinding.ItemPersonajesBinding
 import com.proyecto.ec3_dam2.model.Personaje
 
 
-class RVPersListAdapter(var pers: List<Personaje>): RecyclerView.Adapter<PersVH>() {
+class RVPersListAdapter(var pers: List<Personaje>, val onPersonajesClick: (Personaje) -> Unit): RecyclerView.Adapter<PersVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersVH {
         val binding = ItemPersonajesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PersVH(binding)
+        return PersVH(binding, onPersonajesClick)
     }
 
     override fun getItemCount(): Int = pers.size
@@ -23,11 +23,14 @@ class RVPersListAdapter(var pers: List<Personaje>): RecyclerView.Adapter<PersVH>
     }
 }
 
-class PersVH(private val binding: ItemPersonajesBinding): ViewHolder(binding.root){
+class PersVH(private val binding: ItemPersonajesBinding, val onPersonajesClick: (Personaje) -> Unit): ViewHolder(binding.root){
     fun bind(personaje: Personaje) {
         Glide.with(binding.root.context).load(personaje.image).into(binding.imgPersonaje)
         binding.txtNombre.text = personaje.name
         binding.txtCategoria.text = personaje.category
-    }
 
+        binding.root.setOnClickListener {
+            onPersonajesClick(personaje)
+        }
+    }
 }
