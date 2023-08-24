@@ -6,6 +6,9 @@
     <item android:id="@+id/fragmentFavorite"
         android:title="Favorito"
         android:icon="@drawable/favorito"/>
+    <item android:id="@+id/newListFragment"
+        android:title="ListaNew"
+        android:icon="@drawable/lista"/>
     <item android:id="@+id/fragmentInfo"
         android:title="Info"
         android:icon="@drawable/info"/>

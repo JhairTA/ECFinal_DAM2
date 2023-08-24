@@ -18,7 +18,11 @@
         android:id="@+id/fragmentFavorite"
         android:name="com.proyecto.ec3_dam2.ui.fragments.FragmentFavorite"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_fragmentFavorite_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentInfo"
         android:name="com.proyecto.ec3_dam2.ui.fragments.FragmentInfo"
@@ -33,4 +37,9 @@
             android:name="personaje"
             app:argType="com.proyecto.ec3_dam2.model.Personaje" />
     </fragment>
+    <fragment
+        android:id="@+id/newListFragment"
+        android:name="com.proyecto.ec3_dam2.ui.fragments.NewListFragment"
+        android:label="fragment_new_list"
+        tools:layout="@layout/fragment_new_list" />
 </navigation>
